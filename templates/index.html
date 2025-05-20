@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elephant Detection</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('https://img.freepik.com/free-photo/photorealistic-scene-wild-elephant_23-2151436837.jpg?t=st=1724764700~exp=1724768300~hmac=6fbbc3bc7b3371ce3504c4fcb9fdcae51309c4552a03d09c1b31ef577ead5b1d&w=740');
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        form {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 60%; /* Adjust the width to increase form size */
+    margin: 0 auto; /* Center the form horizontally */
+}
+
+input[type="file"] {
+    margin-bottom: 10px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 100%; /* Make the input fields responsive */
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    width: 100%; /* Make the button responsive */
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+h2 {
+    color: #333;
+    margin-top: 30px;
+    text-align: center;
+}
+
+#videoStream {
+    border: 2px solid #333;
+    border-radius: 8px;
+    margin-top: 15px;
+    width: 80%; /* Adjust the video stream width */
+    height: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media (max-width: 508px) {
+    form {
+        width: 60%; /* Ensure the form is responsive on smaller screens */
+    }
+
+    #videoStream {
+        width: 100%; /* Ensure the video stream is responsive on smaller screens */
+    }
+}
+
+    </style>
+</head>
+<body>
+    <h1 style="color:bisque;">GREENSHIELD:DEEP LEARNING DEEP LEARNING DETECTION SYSTEM FOR SECURING WILDLIFE HABITATS AGAINST UNAUTHORIZED ACCESS SYSTEM</h1>
+    <form method="POST" enctype="multipart/form-data">
+        <input type="file" name="video" accept="video/*" required>
+        <button type="submit">Upload</button>
+    </form>
+
+    {% if video_feed_url %}
+        <h2>Processed Video Stream</h2>
+        <img id="videoStream" src="{{ video_feed_url }}" width="640" height="480" alt="Processed Video Stream">
+    {% endif %}
+</body>
+</html>
